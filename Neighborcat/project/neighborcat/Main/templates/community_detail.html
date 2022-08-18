@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block css %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'community.css' %}" />
+
+{% endblock css %}
+
+
+{% block content %}
+
+<div class="flex-column center">
+
+    <div class="flex-row">
+        <div class="flex-column center">
+            <a href="{% url 'community_detail' post.pk %}" class="post-detail-title">
+                {{ post.title }}
+            </a>
+            <br>
+            <div>
+                <img src="{{ post.image }}" alt="" height="300" width="300">
+            </div>
+            <br>
+            <div>
+                집사: {{ post.author }}
+            </div>
+            <br>
+            <div>
+                날짜: {{ post.published_date }}
+            </div>
+            <br>
+            <div class="background-darker">
+                <div class="post-body">
+                    {{ post.body }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<div class="flex-column center width_600">
+    <div class="flex-row space-around width_500">
+        <a href="{% url 'community_edit' post.pk %}">
+            <button class="btn-pastelblue">글 수정하기</button></a>
+        <a href="{% url 'community_delete' post.pk %}">
+            <button class="btn-pastelblue">글 삭제하기</button></a>
+    </div>
+    <br>
+    <br>
+    <div>
+        <a href="{% url 'community_home' %}">
+            <button class="btn-pastelblue">커뮤니티 홈으로</button></a>
+    </div>
+</div>
+
+
+{% endblock content %}
+
+
+{% block script %}
+
+
+{% endblock script %}

@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block css %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'community.css' %}" />
+
+{% endblock css %}
+
+
+{% block content %}
+
+
+<form method="POST">
+    {% csrf_token %}
+    <div class="flex-column createpost">
+        <br>
+        <br>
+        <div>
+            <label for="title" class="post-title">게시글 제목</label>
+            <br>
+            <input type="text" name="title" id="title" placeholder="{{ post.title }}" />
+        </div>
+        <br>
+        <div>
+            <label for="category" class="post-title">게시글 카테고리</label>
+            <br>
+            <input type="text" name="category" id="category" placeholder="{{ post.category }}" />
+        </div>
+        <br>
+        <div>
+            <label for="body" class="post-title">게시글 내용</label>
+            <br>
+            <textarea type="text" name="body" id="body" placeholder="{{ post.body }}"></textarea>
+        </div>
+        <br>
+        <div>
+            <div class="button">
+                <label for="chooseFile" class="post-title">이미지 첨부</label>
+            </div>
+            <input type="file" id="chooseFile" name="image" accept="image/*" onchange="loadFile(this)">
+        </div>
+        <br>
+        <br>
+        <div class="flex-column width_500 center">
+            <button type="submit" class="btn-pastelblue">글 등록하기</button>
+        </div>
+    </div>
+</form>
+
+
+
+{% endblock content %}
+
+
+{% block script %}
+<script>
+    function loadFile(input) {
+        var file = input.files[0];	//선택된 파일 가져오기
+
+        //미리 만들어 놓은 div에 text(파일 이름) 추가
+        var name = document.getElementById('fileName');
+        name.textContent = file.name;
+
+        //새로운 이미지 div 추가
+        var newImage = document.createElement("img");
+        newImage.setAttribute("class", 'img');
+
+        //이미지 source 가져오기
+        newImage.src = URL.createObjectURL(file);
+
+        newImage.style.width = "70%";
+        newImage.style.height = "70%";
+        newImage.style.visibility = "hidden";   //버튼을 누르기 전까지는 이미지를 숨긴다
+        newImage.style.objectFit = "contain";
+
+        //이미지를 image-show div에 추가
+        var container = document.getElementById('image-show');
+        container.appendChild(newImage);
+    };
+</script>
+
+{% endblock script %}

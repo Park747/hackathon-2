@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="profile_box">
+        <form method="POST" action="" >
+            {% csrf_token %}
+            <div>
+                <label for="pwd">거주지 주소 :{{profile.address}}&nbsp;</label>
+                <input type="text" name="address" id="address">
+            </div>
+            <div>
+                <label for="pwd">고양이 종류 :{{profile.catspecies}}&nbsp;</label>
+                <input type="text" name="catspecies" id="catspecies">
+            </div>
+            <div>
+                <label for="pwd">반려동물등록번호 :{{profile.catnumber}}&nbsp;</label>
+                <input type="text" name="animalnum" id="animalnum">
+            </div>
+            <div>
+                <label for="pwd">프로필 사진 :{{profile.catimage}}&nbsp;</label>
+                <input type="image" name="profileimage" id="profileimage">
+            </div>
+            <div>
+                <label for="pwd">냥이 프로필 사진 :{{profile.userimage}}&nbsp;</label>
+                <input type="image" name="catprofileimage" id="catprofileimage">
+            </div>
+            <button type="submit">로그인!</button>
+        </form>
+    </div>
+</body>
+</html>

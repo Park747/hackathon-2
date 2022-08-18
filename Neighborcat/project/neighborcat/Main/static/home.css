@@ -1,0 +1,56 @@
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.space-around {
+  align-items: center;
+  justify-content: space-around;
+}
+
+.map-container {
+  width: 100%;
+  height: 90%;
+}
+
+.button-container {
+  width: 80%;
+  height: 130px;
+}
+
+.font-big {
+  font-size: 40px;
+}
+
+.btn-pastelblue  {
+  outline:0; 
+  font-size:30px;
+  font-weight:600;
+  font-family: "Cafe24Ssurround";
+  background:rgb(142, 165, 235);
+  border: rgb(142, 165, 235);
+  width: 400px;
+  height: 60px;
+  border-radius: 2%;
+  transition:all .3s ease-out; 
+  box-shadow:inset -6px -6px 0 0 rgba(0, 0, 0, 0.102);
+}
+
+.btn-pastelblue:hover{
+  color: rgb(63, 61, 100);
+}
+
+.btn-pastelblue:active{
+  color:#222;
+  box-shadow:inset -6px -6px 0 0 rgba(0,0,0,.2),
+    1px 1px 0 0 rgba(0, 0, 0, 0.102),
+    2px 2px 0 0 rgba(0, 0, 0, 0.102),
+    3px 3px 0 0 rgba(0, 0, 0, 0.102),
+    4px 4px 0 0 rgba(0, 0, 0, 0.102),
+    5px 5px 0 0 rgba(0, 0, 0, 0.102);
+}

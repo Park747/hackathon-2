@@ -1,0 +1,35 @@
+{% extends 'base2.html' %}
+
+{% block css %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'login.css' %}" />
+
+{% endblock css %}
+
+
+{% block content %}
+
+<div class="login_box">
+    <form method="POST" action="">
+        {% csrf_token %}
+        <div>
+            <label for="ID">방문객 ID :</label>
+            <input type="text" name="username" id="ID">
+        </div>
+        <div>
+            <label for="pwd">비밀번호 :&nbsp;</label>
+            <input type="password" name="password" id="pwd">
+        </div>
+        <br>
+        <button type="submit" class="btn-pastelblue">로그인!</button>
+    </form>
+</div>
+
+{% endblock content %}
+
+
+{% block script %}
+
+
+{% endblock script %}

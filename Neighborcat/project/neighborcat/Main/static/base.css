@@ -1,0 +1,237 @@
+@import "./ui/modal.css";
+@import "./ui/button.css";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap");
+
+@font-face {
+    font-family: 'Cafe24Ssurround';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+   
+  html {
+    height: 100%;
+  }
+  
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    cursor: default;
+    font-family: "Cafe24Ssurround";
+    background: rgb(248, 247, 233);
+    display: flex;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  /* a태그 기본값 설정 */
+  a {
+    text-decoration: none;
+  }
+  /* ul 기본값 설정 */
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  /* navbar */
+  #navbar {
+    /* position: fixed; */
+    width: 100%;
+    height: 12%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* transtion 적용 */
+    transition: all 300ms ease-in-out;
+    /* z-index의 default는 0 */
+    z-index: 1;
+  }
+  
+  .white {
+    color: white;
+  }
+
+  .pastelblue {
+      color:rgb(142, 165, 235)
+  }
+
+  .blueblack {
+      color: rgb(63, 61, 100)
+  }
+  
+  .flex-row {
+      display: flex;
+      flex-direction: row;
+  }
+  .left {
+      justify-content: left;
+  }
+
+  .stick {
+    justify-content: center;
+  }
+
+  .navbar__logo {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 16px;
+  }
+  
+  .navbar__logo_1 {
+    font-weight: 600;
+    font-size: 36px;
+    margin-bottom: 5%;
+  }
+  
+  .navbar__logo_2 {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  /* navbar-menu */
+  .navbar__menu {
+    display: flex;
+    padding-left: 0;
+    margin-right: 2%;
+  }
+  
+  .navbar__menu .navbar__menu__item {
+    padding: 8px 16px;
+    margin: 0 4px;
+    cursor: pointer;
+    color: rgb(162, 181, 240);
+  }
+  
+  .page-wrapper {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+  }
+  
+  .page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .content-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  
+  footer {
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footerbox {
+    font-size: 15px;
+    font-weight: 300;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  ul li button {
+    width: 60px;
+    line-height: inherit;
+    cursor: pointer;
+    height: auto;
+    border: none;
+    outline: none;
+    border-radius: 2rem;
+  } 
+
+  .shadow {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  }
+  
+  .w-100 {
+    width: 100%;
+  }
+  
+  .p-10 {
+    padding: 10px;
+  }
+  
+  .p-50 {
+    padding: 50px;
+  }
+  
+  .mb-10 {
+    margin-bottom: 10px;
+  }
+  
+  .mt-10 {
+    margin-top: 10px;
+  }
+  
+  .ml-10 {
+    margin-left: 10px;
+  }
+  
+  .mr-10 {
+    margin-right: 10px;
+  }
+  
+  .mt-30 {
+    margin-top: 30px;
+  }
+  
+  .mb-30 {
+    margin-bottom: 30px;
+  }
+  
+  .bg-white {
+    background-color: rgb(255, 255, 255);
+  }
+
+  .font-bold {
+    font-weight: 700;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .text-left {
+    text-align: left;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .flex-col {
+    flex-direction: column;
+  }
+  
+  .justify-center {
+    justify-content: center;
+  }
+  
+  .justify-between {
+    justify-content: space-between;
+  }
+  
+  .cursor-pointer {
+    cursor: pointer;
+  }
