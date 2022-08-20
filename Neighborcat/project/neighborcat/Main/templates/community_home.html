@@ -10,6 +10,19 @@
 
 {% block content %}
 
+{% csrf_token %}
+<form method="POST">
+    <p>게시물 검색하기</p>
+    <input type="text" name="key">
+    <button type="submit">FIND</button>
+</form>
+
+{% if searched %}
+{% for post in searched %}
+<p>{{post.title}}</p>
+{% endfor %}
+{% endif %}
+
 <div class="flex-column center">
     <br>
     <ul class="twoinrow">
@@ -42,6 +55,7 @@
         <button class="btn-pastelblue">글 쓰러 가기</button>
     </a>
 </div>
+
 
 
 

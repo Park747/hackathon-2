@@ -12,8 +12,13 @@ from django.views.decorators.csrf import csrf_exempt
 def home(request):
     return render(request, 'home.html')
 
+@csrf_exempt
 def community_home(request):
     posts = Post.objects.all()
+    if request.method == 'POST':
+        key = request.POST['key']
+        searched = Post.objects.filter(title__contains=key)
+        return render(request, 'community_home.html', {'searched':searched, 'posts':posts})
     return render(request, 'community_home.html', {'posts':posts})
 
 @login_required(login_url="user/login/")
@@ -70,4 +75,3 @@ def community_delete(request, post_pk):
 
 
 
-   

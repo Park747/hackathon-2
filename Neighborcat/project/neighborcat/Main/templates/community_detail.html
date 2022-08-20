@@ -23,7 +23,7 @@
             </div>
             <br>
             <div>
-                집사: {{ post.author }}
+                집사: <a href="{% url 'personal_detail' post.author.pk %}">{{ post.author }}</a>
             </div>
             <br>
             <div>

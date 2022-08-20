@@ -3,7 +3,7 @@ from django.contrib import auth
 from django.contrib.auth import authenticate
 import json
 from django.http import HttpResponse,JsonResponse
-from .models import User, Profile
+from .models import User, Profile, Review
 from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
@@ -53,9 +53,26 @@ def register(request):
             return redirect('home')
     return render(request, 'register.html')
 
-def personal_detail(request):
-    profile = Profile.objects.get(user=request.user)
-    return render(request, 'personal_detail.html', {'profile' : profile})
+def my_profile(request):
+    user = request.user
+    profile = Profile.objects.get(user=user)
+    return render(request, 'my_profile.html', {'profile' : profile})
+
+@csrf_exempt
+def personal_detail(request, user_pk):
+    user = User.objects.get(pk=user_pk)
+    profile = Profile.objects.get(user=user)
+    reviews = Review.objects.filter(profile=user)
+    if request.method == "POST":
+        reviewer = request.user
+        text = request.POST["review"]
+        Review.objects.create(
+            reviewer = reviewer,
+            profile = user,
+            text = text
+        )
+        return redirect('personal_detail', user.pk)
+    return render(request, 'personal_detail.html', {'profile' : profile, 'reviews' : reviews})
 
 
 def personal_edit(request):
@@ -70,6 +87,6 @@ def personal_edit(request):
             userimage = request.POST["userimage"]
         )
         new_profile.save()
-        return redirect('Main:home')
+        return redirect('home')
     return render(request, 'personal_edit.html', {'profile' : profile})
 

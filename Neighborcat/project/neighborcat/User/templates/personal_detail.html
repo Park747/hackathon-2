@@ -8,5 +8,14 @@
 </head>
 <body>
     {{ profile.catspecies }}
+    <p>후기 남기기</p>
+    {% csrf_token %}
+    <form method="POST">
+        <input type="text" placeholder="돌봄 후기를 등록해보세요!" name="review">
+        <button type="submit">등록하기</button>
+    </form>
+    {% for review in reviews %}
+    {{ review.text }}
+    {% endfor %}
 </body>
 </html>

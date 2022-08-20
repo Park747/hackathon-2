@@ -20,7 +20,8 @@ from User import views
 urlpatterns = [
     path('login/', views.login, name="login"),
     path('register/', views.register, name="register"),
-    path('personal_detail/', views.personal_detail, name="personal_detail"),
+    path('personal_detail/<int:user_pk>', views.personal_detail, name="personal_detail"),
     path('personal_edit/', views.personal_edit, name="personal_edit"),
-    path('logout/', views.logout, name="logout")
+    path('logout/', views.logout, name="logout"),
+    path('my_profile/', views.my_profile, name="my_profile")
 ]

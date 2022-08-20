@@ -8,7 +8,7 @@ class Post(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='posts')
     profile = models.ForeignKey(
-        Profile, on_delete=models.CASCADE, blank=True, null=True)
+        Profile, on_delete=models.CASCADE, blank=True, null=True, related_name='post_profile')
     title = models.CharField(max_length=128)
     category = models.CharField(max_length=128)
     body = models.TextField()
